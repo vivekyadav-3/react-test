@@ -71,16 +71,19 @@ function App() {
             icon={<FaAtom />}
             title="Atomic Design"
             desc="Component driven architecture for maximum scalability."
+            color="var(--accent-primary)"
           />
           <InfoCard 
             icon={<FaBolt />}
             title="Ultra Fast"
             desc="Powered by Vite.js for instant HMR and builds."
+            color="var(--accent-secondary)"
           />
           <InfoCard 
             icon={<FaLayerGroup />}
             title="Glassmorphism"
             desc="Modern aesthetic with advanced backdrop filters."
+            color="var(--accent-tertiary)"
           />
         </motion.div>
       </motion.div>
@@ -88,7 +91,7 @@ function App() {
   )
 }
 
-function InfoCard({ icon, title, desc }) {
+function InfoCard({ icon, title, desc, color }) {
   return (
     <motion.div 
       className="info-card"
@@ -98,7 +101,7 @@ function InfoCard({ icon, title, desc }) {
         visible: { y: 0, opacity: 1 }
       }}
     >
-      <div className="icon-box">{icon}</div>
+      <div className="icon-box" style={{ color: color || 'var(--accent-primary)' }}>{icon}</div>
       <h3>{title}</h3>
       <p style={{ color: 'var(--text-secondary)', marginTop: '0.5rem' }}>{desc}</p>
     </motion.div>
